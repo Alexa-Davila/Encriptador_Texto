@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Encriptación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Ingrese el texto aquí</h1>
+            <textarea id="input-text" placeholder="Ingrese el texto aquí" rows="10"></textarea>
+            <div class="info">
+                <p>🔒 Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="buttons">
+                <button class="encrypt-btn" onclick="encriptar()">Encriptar</button>
+                <button class="decrypt-btn" onclick="desencriptar()">Desencriptar</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <img src="./assets/Muñeco.png" alt="Ilustración" class="illustration" id="illustration">
+            <p class="result-title" id="result-title">Resultado</p>
+            <p id="output-text"></p>
+        </div>
+        <div id="output-container">
+            <h2 id="result-title" class="hidden">Resultado</h2>
+            <p id="output-text" class="hidden"></p>
+            <button id="copy-button" class="hidden" onclick="copiarTexto()">Copiar</button>
+        </div>
+                       
+    </div>
+    
+
+    <script>
+        // Función para encriptar el texto
+        function encriptar() {
+            const inputElement = document.getElementById("input-text");
+            const texto = inputElement.value;
+            let textoEncriptado = texto
+                .replace(/e/g, "enter")
+                .replace(/i/g, "imes")
+                .replace(/a/g, "ai")
+                .replace(/o/g, "ober")
+                .replace(/u/g, "ufat");
+        
+            mostrarResultado(textoEncriptado);
+        
+            // Borrar el texto ingresado después de encriptar
+            inputElement.value = "";
+        }
+        
+        function desencriptar() {
+            const inputElement = document.getElementById("input-text");
+            const textoEncriptado = inputElement.value;
+            let textoDesencriptado = textoEncriptado
+                .replace(/enter/g, "e")
+                .replace(/imes/g, "i")
+                .replace(/ai/g, "a")
+                .replace(/ober/g, "o")
+                .replace(/ufat/g, "u");
+        
+            mostrarResultado(textoDesencriptado);
+        
+            // Borrar el texto ingresado después de desencriptar
+            inputElement.value = "";
+        }
+        
+        function mostrarResultado(resultado) {
+            document.getElementById("output-text").innerText = resultado;
+        
+            // Ocultar la imagen y mostrar el resultado
+            document.getElementById("illustration").classList.add("hidden");
+            document.getElementById("result-title").classList.remove("hidden");
+            document.getElementById("output-text").classList.remove("hidden");
+        
+            // Mostrar el botón de copiar
+            document.getElementById("copy-button").classList.remove("hidden");
+        }        
+
+        function copiarTexto() {
+            // Obtén el texto del área de resultado
+            const resultado = document.getElementById("output-text").innerText;
+        
+            // Crea un elemento temporal para copiar el texto
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = resultado;
+            document.body.appendChild(tempTextArea);
+        
+            // Selecciona el texto y lo copia
+            tempTextArea.select();
+            document.execCommand("copy");
+        
+            // Remueve el elemento temporal del DOM
+            document.body.removeChild(tempTextArea);
+        
+            // Puedes mostrar una alerta o notificación al usuario de que el texto fue copiado
+            alert("Texto copiado al portapapeles");
+        }        
+    </script>
+
+    <footer class="footer">
+        <p>Desarrollado por Alexa Dávila - &copy; 2024 Todos los derechos reservados.</p>
+    </footer>
+    
+
+</body>
+</html>
+
+
+
+
+

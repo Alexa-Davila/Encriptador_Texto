@@ -1,0 +1,262 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #EAEAEA; /* Gris claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #FFFFFF; /* Blanco */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.left-panel, .right-panel {
+    padding: 30px;
+    flex: 1;
+}
+
+.left-panel {
+    background-color: #1E90FF; /* Azul vibrante */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    color: #333333; /* Gris oscuro */
+    background-color: #FFFFFF; /* Blanco */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    resize: none;
+}
+
+.info {
+    margin-top: 10px;
+    color: #FF1493; /* Rosa fuerte */
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.encrypt-btn {
+    background-color: #32CD32; /* Verde claro */
+    color: white;
+}
+
+.encrypt-btn:hover {
+    background-color: #228B22; /* Verde más oscuro */
+}
+
+.decrypt-btn {
+    background-color: #FFA07A; /* Naranja suave */
+    color: white;
+}
+
+.decrypt-btn:hover {
+    background-color: #FF6347; /* Naranja más oscuro */
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    position: relative;
+}
+
+.result-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+#output-text {
+    font-size: 20px;
+    color: #333;
+}
+
+.illustration {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.no-message {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1E90FF; /* Azul vibrante */
+}
+
+p {
+    color: #333333; /* Gris oscuro */
+}
+
+#copy-button {
+    background-color: #00b894;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#copy-button:hover {
+    background-color: #019874;
+}
+
+.footer {
+    background-color: #0cf;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Estilo de contenedores de texto */
+.textarea-container, .resultado-container {
+    padding: 20px;
+    background-color: #e7f3ff;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+/* Estilos del botón copiar */
+.btn-copiar {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Modificaciones para telefonos y tablets */
+
+/* Para tabletas (pantallas entre 768px y 1024px) */
+@media only screen and (max-width: 1024px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .textarea-container, .resultado-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Para móviles (pantallas menores de 768px) */
+@media only screen and (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .textarea-container, .resultado-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    .btn-copiar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
